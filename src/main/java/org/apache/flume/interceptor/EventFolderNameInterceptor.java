@@ -99,18 +99,18 @@ public class EventFolderNameInterceptor implements Interceptor {
     }
 
     public void configure(Context context) {
-      folderNameKey = context.getString(FOLDERNAMEKEY, FOLDERNAMEKEY_DFLT);
-      fileHeaderKey = context.getString(FILEHEADERKEY, FILEHEADERKEY_DFLT);
+      folderNameKey = context.getString(FOLDERNAMEKEYPROPERTY, folderNameKey);
+      fileHeaderKey = context.getString(FILEHEADERKEYPROPERTY, fileHeaderKey);
     }
   }
 
   public static class Constants {
     // this is the given path name key
-    public static String FILEHEADERKEY = "file";
+    public static String FILEHEADERKEYPROPERTY = "fileHeaderKey";
     // this is the default path name key
     public static String FILEHEADERKEY_DFLT = "file";
     // this is the folder key name
-    public static String FOLDERNAMEKEY = "targetFolderKey";
+    public static String FOLDERNAMEKEYPROPERTY = "targetFolderKey";
     // this is the default folder key
     public static String FOLDERNAMEKEY_DFLT = "defaultFolderKey";
     // this is the name of the folder that will be returned  if not found

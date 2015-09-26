@@ -36,6 +36,7 @@ import org.apache.flume.event.EventBuilder;
  */
 public class EventFolderNameInterceptorTest {
 
+  //TODO: build sample config and test this interceptor
   @Test
   public void testBasic() throws IOException {
 
@@ -43,8 +44,8 @@ public class EventFolderNameInterceptorTest {
     final String folderKey = "testKey";
 
     Context context = new Context();
-    context.put(EventFolderNameInterceptor.Constants.FILEHEADERKEY, fileKey);
-    context.put(EventFolderNameInterceptor.Constants.FOLDERNAMEKEY, folderKey);
+    context.put(EventFolderNameInterceptor.Constants.FILEHEADERKEYPROPERTY, fileKey);
+    context.put(EventFolderNameInterceptor.Constants.FOLDERNAMEKEYPROPERTY, folderKey);
 
     Interceptor.Builder builder = new EventFolderNameInterceptor.Builder();
     builder.configure(context);
@@ -76,8 +77,8 @@ public class EventFolderNameInterceptorTest {
     final String folderKey = "testKey";
 
     Context context = new Context();
-    context.put(EventFolderNameInterceptor.Constants.FILEHEADERKEY, fileKey);
-    context.put(EventFolderNameInterceptor.Constants.FOLDERNAMEKEY, folderKey);
+    context.put(EventFolderNameInterceptor.Constants.FILEHEADERKEYPROPERTY, fileKey);
+    context.put(EventFolderNameInterceptor.Constants.FOLDERNAMEKEYPROPERTY, folderKey);
 
     Interceptor.Builder builder = new EventFolderNameInterceptor.Builder();
     builder.configure(context);
